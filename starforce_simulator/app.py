@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import time
 from simulator import StarForceSimulator
@@ -64,7 +65,8 @@ with st.sidebar:
 # ==========================================
 # 커스텀 CSS 주입
 # ==========================================
-with open("style.css", "r", encoding="utf-8") as f:
+css_path = os.path.join(os.path.dirname(__file__), "style.css")
+with open(css_path, "r", encoding="utf-8") as f:
     css_content = f.read()
     st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
 
