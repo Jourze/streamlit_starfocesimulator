@@ -97,7 +97,7 @@ class StarForceSimulator:
 
     def enhance_once(self) -> Dict[str, Any]:
         """1회 강화를 시도하고 그 결과를 반환합니다."""
-        if self.current_star >= 30 or self.current_star >= self.target_star:
+        if self.current_star >= 30:
             return {'result': 'max', 'cost': 0, 'star': self.current_star}
 
         cost = self.get_cost(self.current_star)
